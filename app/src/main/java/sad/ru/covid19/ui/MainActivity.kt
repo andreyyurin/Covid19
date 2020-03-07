@@ -5,23 +5,32 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.GravityCompat
-import com.google.android.material.navigation.NavigationView
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import sad.ru.covid19.R
 import sad.ru.covid19.helpers.LocaleHelper
+import sad.ru.covid19.ui.fragments.*
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var fm: FragmentManager
+    private lateinit var active: Fragment
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        initBottomView()
         initView()
         initLang()
         initSpinnerSelect()
         init()
+    }
+
+    private fun initBottomView() {
+        fm = supportFragmentManager
     }
 
     private fun initView() {
@@ -29,31 +38,48 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     private fun init() {
-        menu_right.setOnClickListener {
-            if (drawer_layout.isDrawerOpen(GravityCompat.END)) {
-                drawer_layout.closeDrawer(GravityCompat.END)
-            } else {
-                drawer_layout.openDrawer(GravityCompat.END)
-            }
-        }
+        bottom_navigation.setOnNavigationItemSelectedListener(object :
+            BottomNavigationView.OnNavigationItemSelectedListener {
+            override fun onNavigationItemSelected(item: MenuItem): Boolean {
+                when (item.itemId) {
+                    R.id.faq -> {
+                        fm.beginTransaction().replace(R.id.frame, FaqFragment(), "1")
+                    }
+                    R.id.info -> {
+                        fm.beginTransaction().replace(R.id.frame, InfoFragment(), "1")
+                    }
+                    R.id.profi -> {
+                        fm.beginTransaction().replace(R.id.frame, ProfilaktikaFragment(), "1")
+                    }
+                    R.id.syms -> {
+                        fm.beginTransaction().replace(R.id.frame, SymptomsFragment(), "1")
+                    }
+                    R.id.more -> {
+                        fm.beginTransaction().replace(R.id.frame, MoreFragment(), "1")
+                    }
+                    else -> fm.beginTransaction().replace(R.id.frame, InfoFragment(), "1")
+                }
 
-        nav_view.setNavigationItemSelectedListener(this)
+
+                return true
+            }
+
+        }
+        )
     }
 
     private fun initLang() {
         LocaleHelper.setLocale(
-            drawer_layout.context,
-            LocaleHelper.getLanguage(drawer_layout.context)
+            toolbar.context,
+            LocaleHelper.getLanguage(toolbar.context)
         )
 
-        nav_view.menu.clear()
-        nav_view.inflateMenu(R.menu.navigation_menu)
 
         val adapter =
             ArrayAdapter.createFromResource(
                 this,
                 R.array.lang_list,
-                android.R.layout.simple_spinner_item
+                R.layout.spinner_item
             )
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
@@ -77,25 +103,5 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
 
         }
-    }
-
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.account -> {
-                Toast.makeText(this, "1", Toast.LENGTH_LONG).show()
-            }
-            R.id.settings -> {
-                Toast.makeText(this, "2", Toast.LENGTH_LONG).show()
-            }
-            R.id.mycart -> {
-                Toast.makeText(this, "3", Toast.LENGTH_LONG).show()
-            }
-        }
-
-        if (drawer_layout.isDrawerOpen(GravityCompat.END)) {
-            drawer_layout.closeDrawer(GravityCompat.END)
-        }
-
-        return true
     }
 }

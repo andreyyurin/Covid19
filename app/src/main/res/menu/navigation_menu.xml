@@ -2,16 +2,26 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/account"
-        android:icon="@android:drawable/checkbox_on_background"
-        android:title="@string/first" />
+        android:id="@+id/info"
+        android:icon="@drawable/outline_info_white_48"
+        android:title="" />
     <item
-        android:id="@+id/settings"
-        android:icon="@android:drawable/checkbox_on_background"
-        android:title="@string/second" />
+        android:id="@+id/syms"
+        android:icon="@drawable/outline_assignment_white_48"
+        android:title="" />
     <item
-        android:id="@+id/mycart"
-        android:icon="@android:drawable/checkbox_on_background"
-        android:title="My Cart" />
+        android:id="@+id/profi"
+        android:icon="@drawable/outline_local_hospital_white_48"
+        android:title="" />
+
+    <item
+        android:id="@+id/faq"
+        android:icon="@drawable/outline_question_answer_white_48"
+        android:title="" />
+
+    <item
+        android:id="@+id/more"
+        android:icon="@drawable/outline_more_horiz_white_48"
+        android:title="" />
 
 </menu>
