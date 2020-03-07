@@ -3,4 +3,5 @@
     <string name="app_name">Covid19</string>
     <string name="first">Drug</string>
     <string name="second">A lot drugs</string>
+    <string name="name_langs">Language</string>
 </resources>

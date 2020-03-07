@@ -18,10 +18,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        init()
+        initView()
         initLang()
         initSpinnerSelect()
+        init()
+    }
+
+    private fun initView() {
+        setContentView(R.layout.activity_main)
     }
 
     private fun init() {
@@ -37,6 +41,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     private fun initLang() {
+        LocaleHelper.setLocale(
+            drawer_layout.context,
+            LocaleHelper.getLanguage(drawer_layout.context)
+        )
+
+        nav_view.menu.clear()
+        nav_view.inflateMenu(R.menu.navigation_menu)
+
         val adapter =
             ArrayAdapter.createFromResource(
                 this,
@@ -49,13 +61,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     private fun initSpinnerSelect() {
+
+
+
         spinner_lang.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(p0: AdapterView<*>?) {
             }
 
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 val chooseIds = resources.getStringArray(R.array.lang_list_ids)
-                if(LocaleHelper.getLanguage(spinner_lang.context)!=chooseIds[p3.toInt()]){
+                if (LocaleHelper.getLanguage(spinner_lang.context) != chooseIds[p3.toInt()] && chooseIds[p3.toInt()] != "0") {
                     LocaleHelper.setLocale(spinner_lang.context, chooseIds[p3.toInt()])
                     recreate()
                 }
