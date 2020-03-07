@@ -1,14 +1,12 @@
 package sad.ru.covid19.ui
 
 import android.os.Bundle
-import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import sad.ru.covid19.R
@@ -20,6 +18,9 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var fm: FragmentManager
     private lateinit var active: Fragment
+
+    private  var infoFragment : InfoFragment? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initBottomView()
@@ -31,41 +32,42 @@ class MainActivity : AppCompatActivity() {
 
     private fun initBottomView() {
         fm = supportFragmentManager
+        fm.beginTransaction().replace(R.id.frame, getInfoFragment()!!, "2").commit()
     }
 
     private fun initView() {
         setContentView(R.layout.activity_main)
     }
 
+    private fun getInfoFragment() : InfoFragment? {
+        if (infoFragment == null) infoFragment = InfoFragment()
+
+        return infoFragment
+    }
+
     private fun init() {
-        bottom_navigation.setOnNavigationItemSelectedListener(object :
-            BottomNavigationView.OnNavigationItemSelectedListener {
-            override fun onNavigationItemSelected(item: MenuItem): Boolean {
-                when (item.itemId) {
-                    R.id.faq -> {
-                        fm.beginTransaction().replace(R.id.frame, FaqFragment(), "1")
-                    }
-                    R.id.info -> {
-                        fm.beginTransaction().replace(R.id.frame, InfoFragment(), "1")
-                    }
-                    R.id.profi -> {
-                        fm.beginTransaction().replace(R.id.frame, ProfilaktikaFragment(), "1")
-                    }
-                    R.id.syms -> {
-                        fm.beginTransaction().replace(R.id.frame, SymptomsFragment(), "1")
-                    }
-                    R.id.more -> {
-                        fm.beginTransaction().replace(R.id.frame, MoreFragment(), "1")
-                    }
-                    else -> fm.beginTransaction().replace(R.id.frame, InfoFragment(), "1")
+        bottom_navigation.setOnNavigationItemSelectedListener {item ->
+            when (item.itemId) {
+                R.id.faq -> {
+                    fm.beginTransaction().replace(R.id.frame, FaqFragment(), "1").commit()
                 }
-
-
-                return true
+                R.id.info -> {
+                    fm.beginTransaction().replace(R.id.frame, getInfoFragment()!!, "2").commit()
+                }
+                R.id.profi -> {
+                    fm.beginTransaction().replace(R.id.frame, ProfilaktikaFragment(), "3").commit()
+                }
+                R.id.syms -> {
+                    fm.beginTransaction().replace(R.id.frame, SymptomsFragment(), "4").commit()
+                }
+                R.id.more -> {
+                    fm.beginTransaction().replace(R.id.frame, MoreFragment(), "5").commit()
+                }
+                else -> fm.beginTransaction().replace(R.id.frame, getInfoFragment()!!, "2").commit()
             }
 
+            true
         }
-        )
     }
 
     private fun initLang() {
@@ -73,7 +75,6 @@ class MainActivity : AppCompatActivity() {
             toolbar.context,
             LocaleHelper.getLanguage(toolbar.context)
         )
-
 
         val adapter =
             ArrayAdapter.createFromResource(
@@ -87,11 +88,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initSpinnerSelect() {
-
-
         spinner_lang.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onNothingSelected(p0: AdapterView<*>?) {
-            }
+            override fun onNothingSelected(p0: AdapterView<*>?) {}
 
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 val chooseIds = resources.getStringArray(R.array.lang_list_ids)
@@ -99,9 +97,7 @@ class MainActivity : AppCompatActivity() {
                     LocaleHelper.setLocale(spinner_lang.context, chooseIds[p3.toInt()])
                     recreate()
                 }
-
             }
-
         }
     }
 }
