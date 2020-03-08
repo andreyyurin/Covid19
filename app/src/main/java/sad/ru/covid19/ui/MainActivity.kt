@@ -4,9 +4,12 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import butterknife.BindView
+import butterknife.ButterKnife
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import sad.ru.covid19.R
@@ -19,12 +22,14 @@ class MainActivity : AppCompatActivity() {
     private lateinit var fm: FragmentManager
     private lateinit var active: Fragment
 
-    private  var infoFragment : InfoFragment? = null
+    private var infoFragment : InfoFragment? = null
+    private var symsFragment : SymptomsFragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        initBottomView()
+
         initView()
+        initBottomView()
         initLang()
         initSpinnerSelect()
         init()
@@ -42,7 +47,15 @@ class MainActivity : AppCompatActivity() {
     private fun getInfoFragment() : InfoFragment? {
         if (infoFragment == null) infoFragment = InfoFragment()
 
+        titleTv!!.text = getString(R.string.info_title)
         return infoFragment
+    }
+
+    private fun getSymsFragment() : SymptomsFragment? {
+        if (symsFragment == null) symsFragment = SymptomsFragment()
+
+        titleTv!!.text = getString(R.string.syms_title)
+        return  symsFragment
     }
 
     private fun init() {
@@ -58,7 +71,7 @@ class MainActivity : AppCompatActivity() {
                     fm.beginTransaction().replace(R.id.frame, ProfilaktikaFragment(), "3").commit()
                 }
                 R.id.syms -> {
-                    fm.beginTransaction().replace(R.id.frame, SymptomsFragment(), "4").commit()
+                    fm.beginTransaction().replace(R.id.frame, getSymsFragment()!!, "4").commit()
                 }
                 R.id.more -> {
                     fm.beginTransaction().replace(R.id.frame, MoreFragment(), "5").commit()

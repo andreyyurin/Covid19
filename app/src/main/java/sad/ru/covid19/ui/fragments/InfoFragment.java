@@ -20,9 +20,6 @@ import static sad.ru.covid19.helpers.TextViewHelper.initTv;
 
 public class InfoFragment extends Fragment {
 
-//    @BindView(R.id.text)
-//    TextView text;
-
     @BindView(R.id.mainBlock)
     LinearLayout mainBlock;
 
@@ -42,6 +39,8 @@ public class InfoFragment extends Fragment {
         mainBlock.removeAllViews();
 
         RoundedImageView img1 = new RoundedImageView(getContext());
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        img1.setLayoutParams(params);
         img1.setCornerRadius(18);
         img1.setImageDrawable(getResources().getDrawable(R.drawable.ic_info_1));
 
@@ -54,6 +53,4 @@ public class InfoFragment extends Fragment {
 
         return view;
     }
-
-
 }
