@@ -29,8 +29,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         initView()
-        initBottomView()
         initLang()
+        initBottomView()
         initSpinnerSelect()
         init()
     }
@@ -98,6 +98,7 @@ class MainActivity : AppCompatActivity() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
         spinner_lang.adapter = adapter
+        titleTv!!.invalidate()
     }
 
     private fun initSpinnerSelect() {

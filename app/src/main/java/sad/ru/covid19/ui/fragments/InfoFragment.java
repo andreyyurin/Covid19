@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
@@ -23,7 +25,8 @@ public class InfoFragment extends Fragment {
     @BindView(R.id.mainBlock)
     LinearLayout mainBlock;
 
-    public InfoFragment() {}
+    public InfoFragment() {
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,10 +42,12 @@ public class InfoFragment extends Fragment {
         mainBlock.removeAllViews();
 
         RoundedImageView img1 = new RoundedImageView(getContext());
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
         img1.setLayoutParams(params);
+        img1.setAdjustViewBounds(true);
+        img1.setScaleType(ImageView.ScaleType.FIT_XY);
         img1.setCornerRadius(18);
-        img1.setImageDrawable(getResources().getDrawable(R.drawable.ic_info_1));
+        img1.setImageResource(R.drawable.ic_info_1);
 
         mainBlock.addView(img1);
         mainBlock.addView(initTv(getResources().getString(R.string.info_1)));
