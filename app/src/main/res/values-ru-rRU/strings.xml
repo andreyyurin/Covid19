@@ -7,20 +7,6 @@
 
     <string name="name_langs">Язык</string>
 
-    <string-array name="lang_list" translatable="false">
-        <item>@string/name_langs</item>
-        <item>Русский</item>
-        <item>English</item>
-        <item>中國人</item>
-    </string-array>
-
-    <string-array name="lang_list_ids" translatable="false">
-        <item>0</item>
-        <item>ru</item>
-        <item>en</item>
-        <item>zh</item>
-    </string-array>
-
     <string name="info_1"><![CDATA[Коронавирусы являются большим семейством вирусов, способных вызывать разные болезни у людей — от обычной простуды до ТОРС. Вирусы из этого семейства вызывают также ряд болезней среди животных.
 <br><br>
 Новый коронавирус представляет собой особый штамм коронавирусов, ранее не выявляемый среди людей. В связи с тем, что на сегодняшний день зарегистрировано лишь несколько случаев заболевания, информация о передаче, степени тяжести и клиническом воздействии инфекции весьма ограничена.]]></string>
