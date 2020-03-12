@@ -24,6 +24,8 @@ class MainActivity : AppCompatActivity() {
 
     private var infoFragment : InfoFragment? = null
     private var symsFragment : SymptomsFragment? = null
+    private var profilaktikaFragment : ProfilaktikaFragment? = null
+    private var faqFragment : FaqFragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,20 +57,35 @@ class MainActivity : AppCompatActivity() {
         if (symsFragment == null) symsFragment = SymptomsFragment()
 
         titleTv!!.text = getString(R.string.syms_title)
-        return  symsFragment
+        return symsFragment
+    }
+
+    private fun getProfiFragment() : ProfilaktikaFragment? {
+        if (profilaktikaFragment == null) profilaktikaFragment = ProfilaktikaFragment()
+
+        titleTv!!.text = getString(R.string.profi_title)
+        return  profilaktikaFragment
+    }
+
+    private fun getFaqFragment() : FaqFragment? {
+        if (faqFragment == null) faqFragment = FaqFragment()
+
+        titleTv!!.text = getString(R.string.faq_title)
+
+        return faqFragment
     }
 
     private fun init() {
         bottom_navigation.setOnNavigationItemSelectedListener {item ->
             when (item.itemId) {
                 R.id.faq -> {
-                    fm.beginTransaction().replace(R.id.frame, FaqFragment(), "1").commit()
+                    fm.beginTransaction().replace(R.id.frame, getFaqFragment()!!, "1").commit()
                 }
                 R.id.info -> {
                     fm.beginTransaction().replace(R.id.frame, getInfoFragment()!!, "2").commit()
                 }
                 R.id.profi -> {
-                    fm.beginTransaction().replace(R.id.frame, ProfilaktikaFragment(), "3").commit()
+                    fm.beginTransaction().replace(R.id.frame, getProfiFragment()!!, "3").commit()
                 }
                 R.id.syms -> {
                     fm.beginTransaction().replace(R.id.frame, getSymsFragment()!!, "4").commit()
