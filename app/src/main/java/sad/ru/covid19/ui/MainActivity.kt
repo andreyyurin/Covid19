@@ -4,12 +4,9 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import butterknife.BindView
-import butterknife.ButterKnife
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import sad.ru.covid19.R
@@ -26,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     private var symsFragment : SymptomsFragment? = null
     private var profilaktikaFragment : ProfilaktikaFragment? = null
     private var faqFragment : FaqFragment? = null
+    private var moreFragment : MoreFragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -75,6 +73,14 @@ class MainActivity : AppCompatActivity() {
         return faqFragment
     }
 
+    private fun getMoreFragment() : MoreFragment? {
+        if (moreFragment == null) moreFragment = MoreFragment()
+
+        titleTv!!.text = ""
+
+        return moreFragment
+    }
+
     private fun init() {
         bottom_navigation.setOnNavigationItemSelectedListener {item ->
             when (item.itemId) {
@@ -91,7 +97,7 @@ class MainActivity : AppCompatActivity() {
                     fm.beginTransaction().replace(R.id.frame, getSymsFragment()!!, "4").commit()
                 }
                 R.id.more -> {
-                    fm.beginTransaction().replace(R.id.frame, MoreFragment(), "5").commit()
+                    fm.beginTransaction().replace(R.id.frame, getMoreFragment()!!, "5").commit()
                 }
                 else -> fm.beginTransaction().replace(R.id.frame, getInfoFragment()!!, "2").commit()
             }

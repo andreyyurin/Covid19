@@ -74,7 +74,6 @@ public class FaqFragment extends Fragment {
         mainBlock.addView(initTv(getResources().getString(R.string.faq_37)));
         mainBlock.addView(initTv(getResources().getString(R.string.faq_38)));
 
-
         return view;
     }
 }
