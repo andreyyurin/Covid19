@@ -42,4 +42,93 @@ Have you been in contact with someone who has been visiting high-risk areas (Chi
 If the answer to these questions is positive, the symptoms should be treated as carefully as possible.</li></ul>]]></string>
     <string name="info_title">Info</string>
     <string name="syms_title">Symptoms</string>
+
+    <string name="profi_title">Prophylaxis</string>
+
+    <string name="profi_1"><![CDATA[<b>Wash your hands regularly.</b><br>]]></string>
+    <string name="profi_2"><![CDATA[Regularly treat hands with alcohol-containing products or wash them with soap.<br>]]></string>
+    <string name="profi_3"><![CDATA[<b>What s that for?</b>  If a virus is present on the hand surface, treating your hands with alcohol-containing products or washing them with soap will kill it.<br>]]></string>
+    <string name="profi_4"><![CDATA[<br><b>Keep a distance in public places</b><br>]]></string>
+    <string name="profi_5"><![CDATA[Keep at least 1 meter away from people, especially if they have coughs, runny nose and fever.<br>]]></string>
+    <string name="profi_6"><![CDATA[<b>What s that for?</b> By coughing or sneezing, a person with a respiratory infection such as 2019-nCoV spreads tiny droplets containing the virus around them. If you are too close to this person, you may catch the virus by inhaling the air.<br>]]></string>
+    <string name="profi_7"><![CDATA[<br><b>If possible, do not touch the eyes, nose and mouth with your hands.</b><br>]]></string>
+    <string name="profi_8"><![CDATA[<b>What s that for?</b> Hands touch many surfaces where the virus may be present. By touching the eyes, nose or mouth with the hands that contain the infection, the virus can be transferred from the skin of the hands to the body.<br>]]></string>
+    <string name="profi_9"><![CDATA[<br><b>Observe the rules of respiratory hygiene</b><br>]]></string>
+    <string name="profi_10"><![CDATA[When coughing or sneezing, cover your mouth and nose with a cloth or folded elbow; immediately throw the cloth into the trash can with the lid and treat your hands with alcohol-containing antiseptic or wash them with soap and water.
+<br><br>
+<b>What s that for?</b> Covering your mouth and nose when you cough or sneeze helps prevent the spread of viruses and other pathogens. If you cover your nose and mouth with your hand when coughing or sneezing, the microbes may get on your hands and then on objects or people you touch.<br>]]></string>
+    <string name="profi_11"><![CDATA[<br><b>If you have fever, cough or difficulty breathing, seek medical attention as soon as possible.</b><br>]]></string>
+    <string name="profi_12"><![CDATA[If you have visited areas of China where 2019-nCoV is registered, or if you have been in close contact with someone who has symptoms of respiratory illness after your trip from China, inform your health worker.<br>]]></string>
+    <string name="profi_13"><![CDATA[<b>What s that for?</b> Elevated temperatures, coughs and difficulty breathing require immediate medical attention as they may be caused by a respiratory infection or other serious illness. Symptoms of respiratory distress combined with fever may have a variety of causes, including 2019-nCoV, depending on the patient s travel and contacts.<br>]]></string>
+    <string name="profi_14"><![CDATA[<br><b>Keep up to date with the latest information and follow medical advice</b><br>]]></string>
+    <string name="profi_15"><![CDATA[Follow the latest information on COVID-19. Follow the advice of professionals, central and local public health authorities, and the organization where you work to protect yourself and others from COVID-19.<br>]]></string>
+    <string name="profi_16"><![CDATA[<b>What s that for?</b> Central and local health authorities have the most up-to-date information on the evolution of COVID-19 in your area. They can provide the most appropriate advice on personal protective measures for residents in your area. <br>]]></string>
+    <string name="profi_17"><![CDATA[<br><b>Personal protective measures for those who have recently (in the last 14 days) visited COVID-19 distribution areas</b><br>]]></string>
+    <string name="profi_18"><![CDATA[<ul>
+                    <li>&nbsp; Follow the recommendations above.</li>
+                    <li>&nbsp; If you feel unwell, stay home until you recover, even if you have mild symptoms such as a headache or a slight runny nose. Why would you do that? By abstaining from contact with others and not going to treatment facilities, you help these facilities to work more efficiently and protect yourself and others from possible contamination with COVID-19 or other viral infections.</li>
+                    <li>&nbsp; If you have fever, cough or difficulty breathing, do not delay seeking medical attention as these symptoms can be caused by a respiratory infection or other serious illness. First, call the health centre and report any recent travel or contact with people you have travelled to. Why should I do this? Getting medical help over the phone will allow specialists to refer you to a suitable healthcare facility as quickly as possible. It will also help prevent the possible spread of COVID-19 and other viral infections.</li>
+                    </ul]]></string>
+    <string name="profi_19"><![CDATA[<br><b>Get ready for a coronavirus infection.</b><br>]]></string>
+    <string name="faq_title">F.A.Q.</string>
+
+    <string name="faq_1"><![CDATA[<b>What is coronavirus?</b><br>]]></string>
+    <string name="faq_3"><![CDATA[<br><b>What is COVID-19?</b><br>]]></string>
+    <string name="faq_5"><![CDATA[<br><b>What are the symptoms of COVID-19?</b><br>]]></string>
+    <string name="faq_7"><![CDATA[<br><b>How is the virus spreading?</b><br>]]></string>
+    <string name="faq_9"><![CDATA[<br><b>Is the virus causing COVID-19 transmitted through the air?</b><br>]]></string>
+    <string name="faq_11"><![CDATA[<br><b>Can I get COVID-19 from a person who has no symptoms?</b><br>]]></string>
+    <string name="faq_13"><![CDATA[<br><b>Can I catch COVID-19 through sick person s faeces?</b><br>]]></string>
+    <string name="faq_15"><![CDATA[<br><b>How much should I fear COVID-19 infection?</b><br>]]></string>
+    <string name="faq_17"><![CDATA[<br><b>Is COVID-19 an issue for concern?</b><br>]]></string>
+    <string name="faq_19"><![CDATA[<br><b>Who is at risk of a severe course of the disease?</b><br>]]></string>
+    <string name="faq_21"><![CDATA[<br><b>Are antibiotics effective in preventing and treating 2019-nCoV infection?</b><br>]]></string>
+    <string name="faq_23"><![CDATA[<br><b>Are drugs or therapies currently available to prevent or treat COVID-19? </b><br>]]></string>
+    <string name="faq_25"><![CDATA[<br><b>Is it the same virus that causes SARS?</b><br>]]></string>
+    <string name="faq_27"><![CDATA[<br><b>Should I wear a mask to protect myself?</b><br>]]></string>
+    <string name="faq_29"><![CDATA[<br><b>How long does the COVID-19 incubation period last?</b><br>]]></string>
+    <string name="faq_31"><![CDATA[<br><b>Can a human be infected with COVID-19 from an animal?</b><br>]]></string>
+    <string name="faq_33"><![CDATA[<br><b>Can I get COVID-19 from my pet?</b><br>]]></string>
+    <string name="faq_35"><![CDATA[<br><b>How long does the virus survive on surfaces?</b><br>]]></string>
+    <string name="faq_37"><![CDATA[<br><b>Is it safe to receive packages from an area where COVID-19 cases have been reported? </b><br>]]></string>
+    <string name="faq_2"><![CDATA[Coronaviruses are a vast family of viruses with proven pathogenic properties to humans or animals. A number of coronaviruses are known to cause respiratory infections in humans ranging from a common cold to more serious conditions such as Middle Eastern respiratory syndrome (MEIS) and severe acute respiratory syndrome (SARS). The last of the recently discovered coronaviruses causes COVID-19. <br>]]></string>
+    <string name="faq_4"><![CDATA[COVID-19 is an infectious disease caused by the last of the recently discovered coronaviruses. Before the outbreak in Wuhan, China, in December 2019, nothing was known about the new virus and the disease.<br>]]></string>
+    <string name="faq_6"><![CDATA[The most common symptoms of COVID-19 include increased body temperature, fatigue and dry cough. A number of patients may experience a variety of pains, stuffy nose, runny nose, pharyngitis or diarrhoea. These symptoms tend to develop gradually and are poorly defined. Some infected persons do not develop any symptoms or ill health. In most people (about 80%), the disease ends in recovery, with no specific therapeutic measures required. Approximately one in six cases of COVID-19 develops severe symptoms with respiratory failure. Older persons as well as persons with existing somatic diseases such as arterial hypertension, heart disease or diabetes are more likely to develop severe symptoms. If you have fever, cough or difficulty breathing, you should seek medical help. <br>]]></string>
+    <string name="faq_8"><![CDATA[2019-nCoV can be contracted from other people if they are infected with the virus. It can be transmitted from person to person through small droplets emitted from the nose or mouth of a COVID-19 patient when coughing or sneezing. These droplets get on objects and surfaces around the person. Other people may become infected by touching such objects or surfaces first and then the eyes, nose or mouth. In addition, infection can occur by inhaling small droplets that are released when a person coughs or sneezes with COVID-19. For this reason, it is important to keep a distance of more than 1 meter from a sick person.
+<br>
+WHO is following up on research on modes of transmission of COVID-19 and will publish information as it is updated.<br>]]></string>
+    <string name="faq_10"><![CDATA[According to current scientific data, the smaller droplets emitted from the respiratory tract are a more important transmission factor than air. See the answer to the previous question, "How is the virus spreading?"<br>]]></string>
+    <string name="faq_12"><![CDATA[The virus mainly spreads through droplets released from the human respiratory tract by coughing or sneezing. The risk of infection from a person who has no symptoms is extremely low. On the other hand, many people have very few symptoms of COVID-19. This is especially true in the early stages of the disease. Thus, there is a risk of COVID-19 transmission from a person who does not feel sick and has only a mild cough. WHO monitors the progress of ongoing research on the interval of time that a sick person remains contagious and will publish information as it is updated. <br>]]></string>
+    <string name="faq_14"><![CDATA[Apparently, the risk of 2019-nCoV infection through the faeces of an infected person is low. Preliminary studies indicate that the virus may be found in some cases in the faeces, but that this mechanism of transmission does not play a leading role in the current outbreak. WHO is studying the results of ongoing research on the transmission of COVID-19 and will publish information as it is updated. This risk cannot be completely eliminated, and it reaffirms the importance of regular hand washing after using the toilet and before eating. <br>]]></string>
+    <string name="faq_16"><![CDATA[The level of risk is determined by your location, or more precisely by the presence or absence of an outbreak in that area.<br>
+For most people in most regions, the risk of COVID-19 infection is still low. However, in some parts of the world (cities or areas) the disease continues to spread. The risk of infection is higher for those living in or visiting such areas. National governments and health authorities are responding vigorously to each new case of COVID-19 infection. If there are local restrictions on travel, movement or mass events, follow this regime. By supporting disease control measures, you can reduce the risk of COVID-19 infection or spread.
+<br>
+As China and a number of other countries have shown, it is in our power to limit the spread of outbreaks and stop the transmission of infection. Unfortunately, outbreaks can quickly occur in new foci. It is important to remain aware of the situation in your region or the region you are planning to visit. WHO publishes daily updates on the current COVID-19 epidemiological situation around the world.<br>
+
+<br>]]></string>
+    <string name="faq_18"><![CDATA[Coronavirus infection COVID-19 usually occurs in mild forms, especially in children and young people. However, there is a severe form of infection: in about one out of five cases, those who become ill require hospitalization. The concern of people for themselves and their loved ones about the outbreak of COVID-19 is therefore justified.
+<br>
+We can channel our efforts in a constructive way and take action to protect our own health, that of our loved ones and that of our community. The most important and primary measure is regular and thorough hand washing as well as adherence to respiratory hygiene rules. Secondly, there is a need to monitor developments and follow the recommendations of local health authorities, including restrictions on travel, movement or mass events.<br>
+]]></string>
+    <string name="faq_20"><![CDATA[Our information on COVID-19 is not yet complete, but it appears that severe illness is more prevalent in older people as well as in people with existing somatic diseases (e.g. hypertension, heart, lung, cancer or diabetes).<br>]]></string>
+    <string name="faq_22"><![CDATA[No. Antibiotics don t work on viruses, they only work on bacterial infections. COVID-19 disease is of viral nature, so antibiotics are ineffective. Antibiotics should not be used for the prevention or treatment of COVID-19. They should only be used when prescribed by a doctor to treat bacterial infections. <br>]]></string>
+    <string name="faq_24"><![CDATA[A number of Western medicines, as well as traditional folk or home remedies, may contribute to the improvement and relief of the symptoms of COVID-19, however, there is currently no evidence to suggest that any of the available medicines can prevent or treat the disease. WHO does not recommend self-treatment with any medication, including antibiotics, to prevent or treat COVID-19 infection. At the same time, a number of drugs are being clinically tested in both Western and traditional folk medicine. WHO will continue to publish updates as clinical data become available.<br>]]></string>
+    <string name="faq_26"><![CDATA[No. The virus causing COVID-19 belongs to the same family of viruses as the pathogen for severe acute respiratory syndrome (SARS-CS), but it s a different virus. SARS is more dangerous but less infectious than COVID-19. No outbreaks of SARS have been reported anywhere in the world since 2003.<br>]]></string>
+    <string name="faq_28"><![CDATA[You should only wear the mask if you have symptoms of COVID-19 (especially coughing) or if you are caring for someone who may be suffering from COVID-19. Disposable masks should not be reused. If you have no symptoms, or if you are not caring for someone who is sick, it is not wise to use a disposable mask. At present, there is a shortage of masks in the world, so the WHO encourages everyone to use them sparingly.
+<br>
+WHO advocates for the rational use of medical masks to avoid wasting valuable resources as well as improper use of masks (see Guidelines for Use of Masks).
+<br>
+Among the most effective measures to protect your own and others health from COVID-19 is frequent hand washing, covering your nose and mouth with an elbow bend or a coughing cloth, and maintaining a distance of at least 1 meter with people who cough or sneeze. More information can be found in the section on basic precautions for protection against new coronavirus infection.<br>]]></string>
+    <string name="faq_30"><![CDATA[The incubation period is the period of time between infection and the appearance of clinical symptoms of the disease. According to most estimates, the duration of the incubation period of COVID-19 ranges from 1 to 14 days, most commonly around five days. These estimates will be refined as new data become available.<br>]]></string>
+    <string name="faq_32"><![CDATA[Coronaviruses make up a large family of viruses and are widely distributed in animals. Infection of people with these viruses and their subsequent transmission to other people occurs from time to time. For example, SARS-CVs have been found to infect humans from civets and BVRS-CVs from single-humped camels. A possible source of 2019-nCoV in animals has not yet been identified.
+<br>
+As a measure of personal protection, for example when visiting markets where animals are traded, direct contact with animals should be avoided, as well as contact with surfaces with which animals come into contact. Food safety regulations should be strictly observed. Care should be taken when handling raw meat, milk and animal organs to avoid cross-contamination of other unheated products and to avoid eating raw or semi raw animal products.<br>]]></string>
+
+    <string name="faq_34"><![CDATA[No. No data are available on cases of infection among companion pets (cats, dogs) or on the spread of the virus causing COVID-19.<br>]]></string>
+    <string name="faq_36"><![CDATA[The survival time of the 2019-nCoV virus on the surfaces has not yet been precisely determined, but it is assumed to be similar to other members of the coronavirus family by this parameter. Studies (including preliminary data on the causative agent COVID-19) show that the virus will survive on surfaces for several hours to several days. Specific timing depends on a number of conditions (e.g. surface type, ambient temperature and humidity).
+<br>
+If you suspect that a surface may contain a virus, treat it with a conventional disinfectant to destroy the microorganisms and protect yourself and others. Remember to treat your hands with alcoholic beverages or wash them with soap. Do not touch your eyes, mouth or nose.
+<br>]]></string>
+    <string name="faq_38"><![CDATA[Yes. The likelihood that the infection could be transmitted from an infected person through ordered goods is low, as is the risk of COVID-19 contamination from packages that have been moved, transported and exposed to different weather and temperature conditions.<br>]]></string>
+
 </resources>
