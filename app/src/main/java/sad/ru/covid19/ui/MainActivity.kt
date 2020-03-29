@@ -1,12 +1,19 @@
 package sad.ru.covid19.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import com.google.android.gms.ads.InterstitialAd
+import com.google.android.gms.ads.AdSize
+import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.RequestConfiguration
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import sad.ru.covid19.R
@@ -19,11 +26,13 @@ class MainActivity : AppCompatActivity() {
     private lateinit var fm: FragmentManager
     private lateinit var active: Fragment
 
-    private var infoFragment : InfoFragment? = null
-    private var symsFragment : SymptomsFragment? = null
-    private var profilaktikaFragment : ProfilaktikaFragment? = null
-    private var faqFragment : FaqFragment? = null
-    private var moreFragment : MoreFragment? = null
+    private var infoFragment: InfoFragment? = null
+    private var symsFragment: SymptomsFragment? = null
+    private var profilaktikaFragment: ProfilaktikaFragment? = null
+    private var faqFragment: FaqFragment? = null
+    private var moreFragment: MoreFragment? = null
+
+    private lateinit var mInterstitialAd: InterstitialAd
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +42,26 @@ class MainActivity : AppCompatActivity() {
         initBottomView()
         initSpinnerSelect()
         init()
+        initAdMob()
+    }
+
+    private fun initAdMob() {
+        MobileAds.initialize(this, "ca-app-pub-8154277548860310~8115959590")
+
+        RequestConfiguration.Builder().setTestDeviceIds(
+            listOf("91CF873F530C958EBBC647EB3C5679F1")).build()
+
+//        AdRequest.Builder()
+//            // Add a test device to show Test Ads
+//            .addTestDevice("91CF873F530C958EBBC647EB3C5679F1")
+
+        val adRequest: AdRequest = AdRequest.Builder().addTestDevice("91CF873F530C958EBBC647EB3C5679F1").build()
+        adView.loadAd(adRequest)
+
+        mInterstitialAd =  InterstitialAd(this)
+        mInterstitialAd.adUnitId = "ca-app-pub-8154277548860310/5577426164"
+        mInterstitialAd.loadAd(AdRequest.Builder().addTestDevice("91CF873F530C958EBBC647EB3C5679F1").build())
+
     }
 
     private fun initBottomView() {
@@ -44,28 +73,28 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    private fun getInfoFragment() : InfoFragment? {
+    private fun getInfoFragment(): InfoFragment? {
         if (infoFragment == null) infoFragment = InfoFragment()
 
         titleTv!!.text = getString(R.string.info_title)
         return infoFragment
     }
 
-    private fun getSymsFragment() : SymptomsFragment? {
+    private fun getSymsFragment(): SymptomsFragment? {
         if (symsFragment == null) symsFragment = SymptomsFragment()
 
         titleTv!!.text = getString(R.string.syms_title)
         return symsFragment
     }
 
-    private fun getProfiFragment() : ProfilaktikaFragment? {
+    private fun getProfiFragment(): ProfilaktikaFragment? {
         if (profilaktikaFragment == null) profilaktikaFragment = ProfilaktikaFragment()
 
         titleTv!!.text = getString(R.string.profi_title)
-        return  profilaktikaFragment
+        return profilaktikaFragment
     }
 
-    private fun getFaqFragment() : FaqFragment? {
+    private fun getFaqFragment(): FaqFragment? {
         if (faqFragment == null) faqFragment = FaqFragment()
 
         titleTv!!.text = getString(R.string.faq_title)
@@ -73,7 +102,7 @@ class MainActivity : AppCompatActivity() {
         return faqFragment
     }
 
-    private fun getMoreFragment() : MoreFragment? {
+    private fun getMoreFragment(): MoreFragment? {
         if (moreFragment == null) moreFragment = MoreFragment()
 
         titleTv!!.text = ""
@@ -82,7 +111,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun init() {
-        bottom_navigation.setOnNavigationItemSelectedListener {item ->
+        bottom_navigation.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.faq -> {
                     fm.beginTransaction().replace(R.id.frame, getFaqFragment()!!, "1").commit()
@@ -91,6 +120,11 @@ class MainActivity : AppCompatActivity() {
                     fm.beginTransaction().replace(R.id.frame, getInfoFragment()!!, "2").commit()
                 }
                 R.id.profi -> {
+                    if (mInterstitialAd.isLoaded) {
+                        mInterstitialAd.show();
+                    } else {
+                        Log.d("TAG", "The interstitial wasn't loaded yet.");
+                    }
                     fm.beginTransaction().replace(R.id.frame, getProfiFragment()!!, "3").commit()
                 }
                 R.id.syms -> {

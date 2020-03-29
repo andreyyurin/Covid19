@@ -16,11 +16,11 @@
 
             <TextView
                 android:id="@+id/titleTv"
-                android:textSize="16sp"
-                android:textColor="#ffffff"
-                android:layout_centerVertical="true"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textColor="#ffffff"
+                android:textSize="16sp" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -28,19 +28,28 @@
                 android:gravity="right|center_vertical">
 
                 <Spinner
-                    android:backgroundTint="@color/colorPrimary"
                     android:id="@+id/spinner_lang"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorPrimary"
                     android:gravity="center_vertical" />
             </RelativeLayout>
 
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
 
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_centerHorizontal="true"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="ca-app-pub-8154277548860310/5489796252" />
+
     <FrameLayout
         android:id="@+id/frame"
-        android:layout_below="@id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_below="@id/adView" />
 </RelativeLayout>
