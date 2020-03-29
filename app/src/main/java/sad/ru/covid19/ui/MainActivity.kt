@@ -1,6 +1,7 @@
 package sad.ru.covid19.ui
 
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.view.View
 import android.widget.AdapterView
@@ -8,11 +9,9 @@ import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import com.google.android.gms.ads.InterstitialAd
-import com.google.android.gms.ads.AdSize
-import com.google.android.gms.ads.MobileAds
-import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.InterstitialAd
+import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.RequestConfiguration
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
@@ -31,37 +30,71 @@ class MainActivity : AppCompatActivity() {
     private var profilaktikaFragment: ProfilaktikaFragment? = null
     private var faqFragment: FaqFragment? = null
     private var moreFragment: MoreFragment? = null
+    private lateinit var customHandler: Handler
 
     private lateinit var mInterstitialAd: InterstitialAd
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         initView()
+        initMainLang()
+
         initLang()
         initBottomView()
         initSpinnerSelect()
         init()
         initAdMob()
+        initHandler()
+        //       initTimerAdvise()
+    }
+
+    private fun initMainLang() {
+        LocaleHelper.setLocale(
+            this,
+            LocaleHelper.getLanguage(this)
+        )
+        Handler().postDelayed({
+            //doSomethingHere()
+        }, 100)
+    }
+
+    private fun initHandler() {
+        customHandler = Handler()
+        customHandler.postDelayed(updateTimerThread, 0)
+    }
+
+    private fun initTimerAdvise() {
+        if (mInterstitialAd.isLoaded) {
+            mInterstitialAd.show();
+        } else {
+            Log.d("TAG", "The interstitial wasn't loaded yet.");
+        }
+        mInterstitialAd.loadAd(AdRequest.Builder().addTestDevice("91CF873F530C958EBBC647EB3C5679F1").build())
+    }
+
+    private val updateTimerThread: Runnable = object : Runnable {
+        override fun run() { //write here whaterver you want to repeat
+            runOnUiThread {
+                initTimerAdvise()
+                customHandler.postDelayed(this, 60000)
+            }
+        }
     }
 
     private fun initAdMob() {
         MobileAds.initialize(this, "ca-app-pub-8154277548860310~8115959590")
 
         RequestConfiguration.Builder().setTestDeviceIds(
-            listOf("91CF873F530C958EBBC647EB3C5679F1")).build()
+            listOf("91CF873F530C958EBBC647EB3C5679F1")
+        ).build()
 
-//        AdRequest.Builder()
-//            // Add a test device to show Test Ads
-//            .addTestDevice("91CF873F530C958EBBC647EB3C5679F1")
-
-        val adRequest: AdRequest = AdRequest.Builder().addTestDevice("91CF873F530C958EBBC647EB3C5679F1").build()
+        val adRequest: AdRequest =
+            AdRequest.Builder().addTestDevice("91CF873F530C958EBBC647EB3C5679F1").build()
         adView.loadAd(adRequest)
 
-        mInterstitialAd =  InterstitialAd(this)
+        mInterstitialAd = InterstitialAd(this)
         mInterstitialAd.adUnitId = "ca-app-pub-8154277548860310/5577426164"
         mInterstitialAd.loadAd(AdRequest.Builder().addTestDevice("91CF873F530C958EBBC647EB3C5679F1").build())
-
     }
 
     private fun initBottomView() {
@@ -120,11 +153,6 @@ class MainActivity : AppCompatActivity() {
                     fm.beginTransaction().replace(R.id.frame, getInfoFragment()!!, "2").commit()
                 }
                 R.id.profi -> {
-                    if (mInterstitialAd.isLoaded) {
-                        mInterstitialAd.show();
-                    } else {
-                        Log.d("TAG", "The interstitial wasn't loaded yet.");
-                    }
                     fm.beginTransaction().replace(R.id.frame, getProfiFragment()!!, "3").commit()
                 }
                 R.id.syms -> {
@@ -141,10 +169,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initLang() {
-        LocaleHelper.setLocale(
-            toolbar.context,
-            LocaleHelper.getLanguage(toolbar.context)
-        )
 
         val adapter =
             ArrayAdapter.createFromResource(
@@ -156,6 +180,7 @@ class MainActivity : AppCompatActivity() {
 
         spinner_lang.adapter = adapter
         titleTv!!.invalidate()
+        frame.invalidate()
     }
 
     private fun initSpinnerSelect() {

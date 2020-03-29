@@ -16,7 +16,7 @@ public class ImageViewHelper {
     public static RoundedImageView initImg(int resId) {
         RoundedImageView img1 = new RoundedImageView(getContext());
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
-        params.bottomMargin = (int)Converter.convertDipToPixels(10);
+        params.bottomMargin = (int) Converter.convertDipToPixels(10);
         img1.setLayoutParams(params);
         img1.setAdjustViewBounds(true);
         img1.setScaleType(ImageView.ScaleType.FIT_XY);
