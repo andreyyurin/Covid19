@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Covid19</string>
+    <string name="app_name">Covid-19 Handbook</string>
     <string name="first">毒品</string>
     <string name="second">許多藥物</string>
-    <string name="name_langs">語言能力</string>
+    <string name="name_langs">中文</string>
     <string name="info_1"><![CDATA[冠状病毒是一个大型病毒家族，可引起普通感冒乃至中东呼吸综合征（MERS）和严重急性呼吸综合征（SARS）等较严重疾病。新型冠状病毒是以前从未在人类中发现的一种新毒株。  冠状病毒是一种在动物与人类之间传播的人畜共患病毒。详细调查结果显示，严重急性呼吸综合征冠状病毒是从果子狸传到人，中东呼吸综合征冠状病毒是从单峰骆驼传到人。一些已知的冠状病毒在动物中传播，但尚未感染人类。
 <br><br>
 感染的常见体征有呼吸道症状、发热、咳嗽、气短和呼吸困难等。在较严重病例中，感染可导致肺炎、严重急性呼吸综合征、肾衰竭，甚至死亡。

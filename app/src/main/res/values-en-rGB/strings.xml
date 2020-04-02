@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Covid19</string>
+    <string name="app_name">Covid-19 Handbook</string>
     <string name="first">Drug</string>
     <string name="second">A lot drugs</string>
-    <string name="name_langs">Language</string>
+    <string name="name_langs">English</string>
 
     <string name="info_1"><![CDATA[Coronaviruses are a large family of viruses that can cause various diseases in humans - from the common cold to SARS. Viruses from this family also cause a number of diseases in animals.
 <br><br>

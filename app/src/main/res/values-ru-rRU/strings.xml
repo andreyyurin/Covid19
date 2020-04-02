@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name">Covid19</string>
+    <string name="app_name">Covid-19 Handbook</string>
     <string name="open_toggle" translatable="false">Open</string>
     <string name="close_toggle" translatable="false">Close</string>
     <string name="first">Drug</string>
     <string name="second">A lot drugs</string>
 
-    <string name="name_langs">Язык</string>
+    <string name="name_langs">Русский</string>
 
     <string name="info_1"><![CDATA[Коронавирусы являются большим семейством вирусов, способных вызывать разные болезни у людей — от обычной простуды до ТОРС. Вирусы из этого семейства вызывают также ряд болезней среди животных.
 <br><br>
